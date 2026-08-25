@@ -1,10 +1,10 @@
 # Static Stress Analysis of an Aluminum Alloy Vehicle Wheel Under Lateral Cornering Loads.
 ---
-**Software:** SolidWorks Simulation (Static Study) |
+**Software:** SolidWorks Simulation (Static Study)
 
-**Domain:** Structural Mechanics & FEA |
+**Domain:** Structural Mechanics & FEA 
 
-**Date:** 2025
+**Date:** 2025 
 
 ---
 
@@ -24,9 +24,10 @@ This project investigates the structural behaviour, stress concentrations, and e
 
 ## 3. Boundary Setup & Load Conditions
 * ***Material:*** Permanent Mould Cast Aluminum (A356-T6), isotropic, linear elastic --  ($\sigma_{yield} = 152\text{ MPa}$, $E = 72.4\text{ GPa}$, $\nu = 0.33$).
-* ***Applied Load:*** A lateral force of $11,500\text{ N}$ applied normally across the outer rim flanges to simulate peak cornering thrust.
-* ***Fixtures:*** Fixed geometry constraints were applied to the hub mounting face and bolt-hole seats to simulate being torqued directly to the wheel assembly.
-* ***Meshing Strategy & Discretization:*** Applied a high-density, Curvature-based solid mesh to automatically refine element density along rounded, fillets, bolt seats, and flange transitions. Discretised body into **344,322 nodes** and **189,811 elements**, maintaining zero distorted elements, ensuring high numerical fidelity around geometric radii. ![alt text](images/MeshQlty-1)
+* ***Applied Load:*** A lateral force of $11,500\text{ N}$ applied normally across the outer rim flanges to simulate peak cornering thrust.![alt text](images/.jpg)
+* ***Fixtures:*** Fixed geometry constraints were applied to the hub mounting face and bolt-hole seats to simulate being torqued directly to the wheel assembly. ![alt text](images/.jpg)
+* ***Meshing Strategy & Discretization:*** Applied a high-density, Curvature-based solid mesh to automatically refine element density along rounded, fillets, bolt seats, and flange transitions. Discretised body into **344,322 nodes** and **189,811 elements**, maintaining zero distorted elements, ensuring high numerical fidelity around geometric radii.
+![alt text](images/MeshQltyPlot-1.jpg) 
 
 **Limitation:** The study focused purely on static lateral stress; dynamic fatigue, thermal gradients, and impact loading were excluded to isolate cornering response.
 
@@ -35,13 +36,13 @@ This project investigates the structural behaviour, stress concentrations, and e
 ## 4. FEA Results & Analysis
 
 ### *Von Mises Stress & Safety Margins*
-* ***Peak Stress:*** The maximum von Mises stress calculated was $19.4\text{ MPa}$ ($1.94\times 10^7\text { N/m}^2$), concentrated along the inner flange and spoke root radius.
-* ***Yield Assessment:*** Comparing the peak stress directly to the $152\text{ MPa}$ yield limit of the A356-T6 aluminum confirms the wheel remains well within its linear elastic limit.
-* ***Factor of Safety (FoS):*** A robust safety factor of **$\approx 7.83$** relative to material yield strength verifies that the structural architecture easily handles the $11.5\text{ kN}$ lateral force.
+* ***Peak Stress:*** The maximum von Mises stress calculated was $19.4\text{ MPa}$ ($1.94\times 10^7\text { N/m}^2$), concentrated along the inner flange and spoke root radius. 
+* ***Yield Assessment:*** Comparing the peak stress directly to the $152\text{ MPa}$ yield limit of the A356-T6 aluminum confirms the wheel remains well within its linear elastic limit.![alt text](images/Stress1.jpg)
+* ***Factor of Safety (FoS):*** A robust safety factor of **$\approx 7.83$** relative to material yield strength verifies that the structural architecture easily handles the $11.5\text{ kN}$ lateral force. ![alt text](images/.jpg)
 
 ### *Deformation & Strain Profile*
-* ***Displacement:*** The maximum resultant displacement reached on **$0.0476\text{ mm}$ ($47.6\ \mu\text{m}$)** at the flange, confirming high lateral stiffness with negligible geometry compliance.
-* ***Equivalent Strain:*** Peak strain recorded was **$2.233 \times 10^{-4}$**, localized along the high-stress fillet regions.
+* ***Displacement:*** The maximum resultant displacement reached on **$0.0476\text{ mm}$ ($47.6\ \mu\text{m}$)** at the flange, confirming high lateral stiffness with negligible geometry compliance. ![alt text](images/Displacement1.jpg)
+* ***Equivalent Strain:*** Peak strain recorded was **$2.233 \times 10^{-4}$**, localized along the high-stress fillet regions. ![alt text](images/Strain2.jpg)
 
 ---
 
