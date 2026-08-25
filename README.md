@@ -38,10 +38,12 @@ This project investigates the structural behaviour, stress concentrations, and e
 ### *Von Mises Stress & Safety Margins*
 * ***Peak Stress:*** The maximum von Mises stress calculated was $19.4\text{ MPa}$ ($1.94\times 10^7\text { N/m}^2$), concentrated along the inner flange and spoke root radius. 
 * ***Yield Assessment:*** Comparing the peak stress directly to the $152\text{ MPa}$ yield limit of the A356-T6 aluminum confirms the wheel remains well within its linear elastic limit.![alt text](images/Stress1.jpg)
+
 * ***Factor of Safety (FoS):*** A robust safety factor of **$\approx 7.83$** relative to material yield strength verifies that the structural architecture easily handles the $11.5\text{ kN}$ lateral force. ![alt text](images/.jpg)
 
 ### *Deformation & Strain Profile*
 * ***Displacement:*** The maximum resultant displacement reached on **$0.0476\text{ mm}$ ($47.6\ \mu\text{m}$)** at the flange, confirming high lateral stiffness with negligible geometry compliance. ![alt text](images/Displacement1.jpg)
+
 * ***Equivalent Strain:*** Peak strain recorded was **$2.233 \times 10^{-4}$**, localized along the high-stress fillet regions. ![alt text](images/Strain2.jpg)
 
 ---
@@ -70,4 +72,5 @@ To verify that the SolidWorks results were not sensitive to solver-specific form
 
 ---
 ## APPENDIX
-
+![alt text](images/MeshQlityPlot-2.jpg)![alt text](images/Displacement2.jpg)![alt text](images/Strain1.jpg)![alt text](images/Stress2.jpg)
+![alt text](images/.jpg)![alt text](images/.jpg)![alt text](images/.jpg)![alt text](images/.jpg)![alt text](images/.jpg)![alt text](images/.jpg)
