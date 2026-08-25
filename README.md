@@ -26,7 +26,7 @@ This project investigates the structural behaviour, stress concentrations, and e
 * ***Material:*** Permanent Mould Cast Aluminum (A356-T6), isotropic, linear elastic --  ($\sigma_{yield} = 152\text{ MPa}$, $E = 72.4\text{ GPa}$, $\nu = 0.33$).
 * ***Applied Load:*** A lateral force of $11,500\text{ N}$ applied normally across the outer rim flanges to simulate peak cornering thrust.
 * ***Fixtures:*** Fixed geometry constraints were applied to the hub mounting face and bolt-hole seats to simulate being torqued directly to the wheel assembly.
-* ***Meshing Strategy & Discretization:*** Applied a high-density, Curvature-based solid mesh to automatically refine element density along rounded, fillets, bolt seats, and flange transitions. Discretised body into **344,322 nodes** and **189,811 elements**, maintaining zero distorted elements, ensuring high numerical fidelity around geometric radii.
+* ***Meshing Strategy & Discretization:*** Applied a high-density, Curvature-based solid mesh to automatically refine element density along rounded, fillets, bolt seats, and flange transitions. Discretised body into **344,322 nodes** and **189,811 elements**, maintaining zero distorted elements, ensuring high numerical fidelity around geometric radii. ![alt text](images/MeshQlty-1)
 
 **Limitation:** The study focused purely on static lateral stress; dynamic fatigue, thermal gradients, and impact loading were excluded to isolate cornering response.
 
