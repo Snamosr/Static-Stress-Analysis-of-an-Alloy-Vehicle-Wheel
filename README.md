@@ -1,0 +1,1 @@
+# Static-Stress-Analysis-of-an-Alloy-Vehicle-Wheel
