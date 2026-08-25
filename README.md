@@ -45,8 +45,11 @@ This project was a crucial step in bridging pure 3D design with quantitative str
 To verify that the SolidWorks results were not sensitive to soler-specific formulation errors or mesh artifacts, a benchmark study was independently run in **ANSYS Mechanical** using identical geometry, material parameters, and an $11.5\text{ kN}$ lateral load.
 
 ### Key Validation Outcomes
-* **Stress Convergence:** SolidWorks predicted a peak von Mises stress of **($19.4\text{ ,MPa}$)** while ANSYS yielded **$18.96\text{ MPa}$** - a high-fidelity correlation with only **2.3% variance**. Both solvers highlighted identical stress concentration zones along the spoke root radii.
-* **Elastic Compliance:** Both solvers confirmed negligible structural deflection SolidWorks ($0.0476\text {mm}$) vs. ANSYS ($[ANSYS\ Deflection]\text{ mm}$) - demonstrating high structural stiffness consistency across both FEA Solvers.
+* **Stress Convergence:** SolidWorks predicted a peak von Mises stress of **($19.4\text{ MPa}$)** while ANSYS yielded **$18.96\text{ MPa}$** - a high-fidelity correlation with only **2.3% variance**. Both solvers highlighted identical stress concentration zones along the spoke root radii.
+* **Elastic Compliance:** Both solvers confirmed negligible structural deflection under load ($< 0.05\text{ mm}$ total resultant displacement).
+* **Fatigue Safety Margin:** ANSYS Fatigue Tool analysis verified a minimum Factor of Safety of **4.55** under $10^6$ cyclic cornering iterations, confirming long-term fatigue durability.
+---
+
 ## Contributors
-* [Amos Ablorh]() - *CAD Geometry Preparation, SolidWorks Simulation (FEA), and Secondary Documentation*
-* [Francis Blay-Yenzu]() - *CAD Geometry Preparation, Independent Benchmarking & FEA Cross-Validation in ANSYS Mechanical*
+* [Amos Ablorh]() - *CAD Geometry Preparation, SolidWorks Static FEA Setup, Post-Processing & Secondary Documentation*
+* [Francis Blay-Yenzu]() - *3D CAD Modeling, ANSYS Mechanical Setup, Multi-Solver Benchmarking, Post-Processing, Documentation*.
