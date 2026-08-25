@@ -6,6 +6,7 @@
 
 **Date:** 2025
 
+---
 
 ## 1. Background & Motivation
 Creating complex 3D models of automotive components was a great way to master CAD surfacing and solid modeling. However, as I looked at the multi-spoke wheel, a fundamental engineering question came in mind: *Is this design actually functionally sound, or is it just aesthetically pleasing?*
@@ -14,14 +15,22 @@ In modern automotive design, alloy wheels must balance low unsprung mass with st
 
 To answer this, I established a focused static FEA study in SolidWorks Simulation to evaluate the wheel's performance under severe cornering conditions.
 
+---
+
 ## 2. Description
 This project investigates the structural behaviour, stress concentrations, and elastic deformation of an A356-T6 cast aluminum alloy wheel subjected to aggressive lateral cornering forces. Using SolidWorks Simulation, a static FEA study was conducted to evaluate safety margins, ensure lightweight performance, and verify structural resilience at critical wheel-spoke transitions.
+
+---
 
 ## 3. Boundary Setup & Load Conditions
 * ***Material:*** Permanent Mould Cast Aluminum (A356-T6), isotropic, linear elastic --  ($\sigma_{yield} = 152\text{ MPa}$, $E = 72.4\text{ GPa}$, $\nu = 0.33$).
 * ***Applied Load:*** A lateral force of $11,500\text{ N}$ applied normally across the outer rim flanges to simulate peak cornering thrust.
-* ***Fixtures:*** Fixed geometry constraints applied to the hub mounting face and bolt-hole seats.
+* ***Fixtures:*** Fixed geometry constraints were applied to the hub mounting face and bolt-hole seats to simulate being torqued directly to the wheel assembly.
 * ***Meshing Strategy & Discretization:*** Applied a high-density, Curvature-based solid mesh to automatically refine element density along rounded, fillets, bolt seats, and flange transitions. Discretised body into **344,322 nodes** and **189,811 elements**, maintaining zero distorted elements, ensuring high numerical fidelity around geometric radii.
+
+**Limitation:** The study focused purely on static lateral stress; dynamic fatigue, thermal gradients, and impact loading were excluded to isolate cornering response.
+
+---
 
 ## 4. FEA Results & Analysis
 
@@ -34,6 +43,8 @@ This project investigates the structural behaviour, stress concentrations, and e
 * ***Displacement:*** The maximum resultant displacement reached on **$0.0476\text{ mm}$ ($47.6\ \mu\text{m}$)** at the flange, confirming high lateral stiffness with negligible geometry compliance.
 * ***Equivalent Strain:*** Peak strain recorded was **$2.233 \times 10^{-4}$**, localized along the high-stress fillet regions.
 
+---
+
 ## 5. Design & Engineering Takeaways
 This project was a crucial step in bridging pure 3D design with quantitative structural verification:
 
@@ -41,15 +52,21 @@ This project was a crucial step in bridging pure 3D design with quantitative str
 2. ***Structure Adequacy:*** The structural architecture remains well within the linear elasticity regime under an $11.5\text{ kN}$ lateral force, confirming high fatigue life margins during steady-state cornering.
 3. ***Optimization Potential:*** The high *Factor of Safety* ($\text{FoS} \approx 7.8$) suggests opportunities for weight reduction through targeted web pocketing or spoke thinning without compromising stiffness or safety standards.
 
+---
+
 ## 6. Multi-Solver Cross-Validation (SolidWorks vs. ANSYS)
-To verify that the SolidWorks results were not sensitive to soler-specific formulation errors or mesh artifacts, a benchmark study was independently run in **ANSYS Mechanical** using identical geometry, material parameters, and an $11.5\text{ kN}$ lateral load.
+To verify that the SolidWorks results were not sensitive to solver-specific formulation errors or mesh artifacts, a benchmark study was independently run in **ANSYS Mechanical** using identical geometry, material parameters, and an $11.5\text{ kN}$ lateral load.
 
 ### Key Validation Outcomes
-* **Stress Convergence:** SolidWorks predicted a peak von Mises stress of **($19.4\text{ MPa}$)** while ANSYS yielded **$18.96\text{ MPa}$** - a high-fidelity correlation with only **2.3% variance**. Both solvers highlighted identical stress concentration zones along the spoke root radii.
+* **Stress Convergence:** SolidWorks predicted a peak von Mises stress of **$19.4\text{ MPa}$** while ANSYS yielded **$18.96\text{ MPa}$** - a high-fidelity correlation with only **2.3% variance**. Both solvers highlighted identical stress concentration zones along the spoke root radii.
 * **Elastic Compliance:** Both solvers confirmed negligible structural deflection under load ($< 0.05\text{ mm}$ total resultant displacement).
 * **Fatigue Safety Margin:** ANSYS Fatigue Tool analysis verified a minimum Factor of Safety of **4.55** under $10^6$ cyclic cornering iterations, confirming long-term fatigue durability.
 ---
 
 ## Contributors
-* [Amos Ablorh]() - *CAD Geometry Preparation, SolidWorks Static FEA Setup, Post-Processing & Secondary Documentation*
-* [Francis Blay-Yenzu]() - *3D CAD Modeling, ANSYS Mechanical Setup, Multi-Solver Benchmarking, Post-Processing, Documentation*.
+* [Amos Ablorh](https://github.com/Snamosr) - *CAD Geometry Preparation, SolidWorks Static FEA Setup, Post-Processing & Secondary Documentation*
+* [Francis Blay-Yenzu](https://github.com/blay-yenzu) - *3D CAD Modeling, ANSYS Mechanical Setup, Multi-Solver Benchmarking, Post-Processing, Documentation*.
+
+---
+## APPENDIX
+
