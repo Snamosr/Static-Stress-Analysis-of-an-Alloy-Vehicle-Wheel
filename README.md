@@ -24,8 +24,11 @@ This project investigates the structural behaviour, stress concentrations, and e
 
 ## 3. Boundary Setup & Load Conditions
 * ***Material:*** Permanent Mould Cast Aluminum (A356-T6), isotropic, linear elastic --  ($\sigma_{yield} = 152\text{ MPa}$, $E = 72.4\text{ GPa}$, $\nu = 0.33$).
-* ***Applied Load:*** A lateral force of $11,500\text{ N}$ applied normally across the outer rim flanges to simulate peak cornering thrust.![alt text](images/.jpg)
-* ***Fixtures:*** Fixed geometry constraints were applied to the hub mounting face and bolt-hole seats to simulate being torqued directly to the wheel assembly. ![alt text](images/.jpg)
+* ***Applied Load:*** A lateral force of $11,500\text{ N}$ applied normally across the outer rim flanges to simulate peak cornering thrust.![alt text](images/ForcesAppn.png)
+  
+* ***Fixtures:*** Fixed geometry constraints were applied to the hub mounting face and bolt-hole seats to simulate being torqued directly to the wheel assembly.
+
+![alt text](images/fixtures.png)
 * ***Meshing Strategy & Discretization:*** Applied a high-density, Curvature-based solid mesh to automatically refine element density along rounded, fillets, bolt seats, and flange transitions. Discretised body into **344,322 nodes** and **189,811 elements**, maintaining zero distorted elements, ensuring high numerical fidelity around geometric radii.
 ![alt text](images/MeshQltyPlot-1.jpg) 
 
@@ -39,7 +42,7 @@ This project investigates the structural behaviour, stress concentrations, and e
 * ***Peak Stress:*** The maximum von Mises stress calculated was $19.4\text{ MPa}$ ($1.94\times 10^7\text { N/m}^2$), concentrated along the inner flange and spoke root radius. 
 * ***Yield Assessment:*** Comparing the peak stress directly to the $152\text{ MPa}$ yield limit of the A356-T6 aluminum confirms the wheel remains well within its linear elastic limit.![alt text](images/Stress1.jpg)
 
-* ***Factor of Safety (FoS):*** A robust safety factor of **$\approx 7.83$** relative to material yield strength verifies that the structural architecture easily handles the $11.5\text{ kN}$ lateral force. ![alt text](images/.jpg)
+* ***Factor of Safety (FoS):*** A robust safety factor of **$\approx 7.82$** relative to material yield strength verifies that the structural architecture easily handles the $11.5\text{ kN}$ lateral force. ![alt text](images/FoS-2.jpg)
 
 ### *Deformation & Strain Profile*
 * ***Displacement:*** The maximum resultant displacement reached on **$0.0476\text{ mm}$ ($47.6\ \mu\text{m}$)** at the flange, confirming high lateral stiffness with negligible geometry compliance. ![alt text](images/Displacement1.jpg)
@@ -61,9 +64,9 @@ This project was a crucial step in bridging pure 3D design with quantitative str
 To verify that the SolidWorks results were not sensitive to solver-specific formulation errors or mesh artifacts, a benchmark study was independently run in **ANSYS Mechanical** using identical geometry, material parameters, and an $11.5\text{ kN}$ lateral load.
 
 ### Key Validation Outcomes
-* **Stress Convergence:** SolidWorks predicted a peak von Mises stress of **$19.4\text{ MPa}$** while ANSYS yielded **$18.96\text{ MPa}$** - a high-fidelity correlation with only **2.3% variance**. Both solvers highlighted identical stress concentration zones along the spoke root radii.
+* **Stress Convergence:** SolidWorks predicted a peak von Mises stress of **$19.4\text{ MPa}$** while ANSYS yielded **$18.96\text{ MPa}$** - a high-fidelity correlation with only **2.3% variance**. Both solvers highlighted identical stress concentration zones along the spoke root radii. ![alt text](images/Stress_von-Mises.jpg)
 * **Elastic Compliance:** Both solvers confirmed negligible structural deflection under load ($< 0.05\text{ mm}$ total resultant displacement).
-* **Fatigue Safety Margin:** ANSYS Fatigue Tool analysis verified a minimum Factor of Safety of **4.55** under $10^6$ cyclic cornering iterations, confirming long-term fatigue durability.
+* **Fatigue Safety Margin:** ANSYS Fatigue Tool analysis verified a minimum Factor of Safety of **4.55** under $10^6$ cyclic cornering iterations, confirming long-term fatigue durability. ![alt text](images/FOS-ANSYS.jpg)
 ---
 
 ## Contributors
@@ -71,6 +74,10 @@ To verify that the SolidWorks results were not sensitive to solver-specific form
 * [Francis Blay-Yenzu](https://github.com/blay-yenzu) - *3D CAD Modeling, ANSYS Mechanical Setup, Multi-Solver Benchmarking, Post-Processing, Documentation*.
 
 ---
-## APPENDIX
-![alt text](images/MeshQlityPlot-2.jpg)![alt text](images/Displacement2.jpg)![alt text](images/Strain1.jpg)![alt text](images/Stress2.jpg)
-![alt text](images/.jpg)![alt text](images/.jpg)![alt text](images/.jpg)![alt text](images/.jpg)![alt text](images/.jpg)![alt text](images/.jpg)
+## APPENDIX 1 -- SOLIDWORKS PLOTS
+![alt text](images/MeshQlityPlot-2.jpg)![alt text](images/Displacement2.jpg)![alt text](images/Strain1.jpg)![alt text](images/Stress2.jpg)![alt text](images/FoS-1.jpg)
+
+## APPENDIX 2 -- ANSYS PLOTS
+![alt text](images/ForceApptn.jpg)![alt text](images/ANSYSmesh.jpg)![alt text](images/vonMises-1.jpg)![alt text](images/total-Def-2.jpg)![alt text](images/drctDfm-1.jpg)![alt text](images/FOS-close-shot.jpg)![alt text](images/FoS.jpg)
+
+
